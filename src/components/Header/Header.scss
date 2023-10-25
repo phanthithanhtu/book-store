@@ -2,29 +2,6 @@
 .header {
   background-color: #928989;
 }
-.navbar__list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  align-items: center;
-}
-
-.navbar__list li {
-  padding: 0 15px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  font-weight: 400;
-}
-
-/* Thay đổi font size và text-transform để làm cho chữ in hoa và lớn hơn */
-.navbar__list a {
-  text-decoration: none;
-  color: #0b0a0a;
-  font-size: 1rem; /* Điều chỉnh kích thước font theo mong muốn */
-  text-transform: uppercase; /* Chuyển chữ thành in hoa */
-}
-
-.navbar__list a:hover {
-  color: #ff5900;
+.header__wrap.right-section{
+  margin-left: auto;
 }
