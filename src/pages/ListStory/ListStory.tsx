@@ -1,10 +1,10 @@
 import React from 'react';
 import StoryItem from '../../components/StoryItem/StoryItem';
 import './ListStory.scss';
-import data from '../../data/items.json'; // Điều chỉnh đường dẫn và tên tệp JSON
+import data from '../../data/items.json';
 
 function ListStory() {
-  const datas = data; // Sử dụng dữ liệu từ tệp JSON giả
+  const datas = data;
 
   return (
     <div className="list-story">
