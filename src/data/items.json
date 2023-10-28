@@ -5,6 +5,7 @@
     "image": "https://static.8cache.com/cover/o/eJzLyTDW1zXyzU_JDPKx0M0z0A9LMfaMSnHzCYn01HeEgdBy_RLXQLP4rLAiH09P_XIjQ1PdDGMjI13PZBMjAJ2kEzY=/gap-anh-la-su-bat-ngo-tuyet-voi-nhat.jpg",
     "name": "Gặp Anh Là Sự Bất Ngờ Tuyệt Vời Nhất",
     "url": "gap-anh-la-su-bat-ngo-tuyet-voi-nhat",
+    "theloai": "male",
     "author": " Thanhtu"
   },
   {
@@ -13,6 +14,7 @@
     "image": "https://static.8cache.com/cover/o/eJzLyTDW100yK3T29owPz6_K1g9LCfIM8CoxTiz11HeEAScTfY-wYHdzw0KfEt9I_XIjQ1PdDGMjI13PZBMjALWBE28=/dai-than-em-nuoi-anh.jpg",
     "name": "Đại Thần, Em Nuôi Anh!!!",
     "url": "dai-than,-em-nuoi-anh!!!",
+    "theloai": "male",
     "author": " Thanhtu"
   },
   {
@@ -21,6 +23,7 @@
     "image": "https://static.8cache.com/cover/o/eJzLyTDW1803LI83CcnMzsgJ1Q8Lc8ot9is1Ciz11HeEgrwoA_2wFDdL42yToOAIV_1yI0NT3QxjIyMAZI4SdQ==/vo-sac-cung-khuynh-thanh.jpg",
     "name": "Vô Sắc Cũng Khuynh Thành",
     "url":"vo-sac-cung-khuynh-thanh",
+    "theloai": "male",
     "author": " Thanhtu"
   },
   {
@@ -29,6 +32,7 @@
     "image": "https://static.8cache.com/cover/o/eJzLyTDT1y3VNYj0sPRJC3Xx1A8LDjV2DQ8vC9T11HeEgtyofP3E5HKDDDOX7Gz3dP1yI0NT3QxjIyMAPCUSDg==/tinh-co-anh-da-gap-phai-em.jpg",
     "name": "Tình Cờ Anh Đã Gặp Phải Em",
     "url": "tinh-co-anh-da-gap-phai-em",
+    "theloai": "female",
     "author": " Thanhtu"
   },
   {
@@ -37,6 +41,7 @@
     "image":"https://static.8cache.com/cover/o/eJzLyTDT1w0xMDA1rgwzTEtJ1w8LDjV2DMgyMPP01HeEgtwIC_18s5L4Kt888_hUR_1yI0NT3QxjIyMAMLgRvQ==/thien-thuong-hong-phi.jpg",
     "name": "Thiên Thượng Hồng Phi",
     "url": "thien-thuong-hong-phi",
+    "theloai": "female",
     "author": " Thanhtu"
   },
   {
@@ -44,6 +49,7 @@
     "description": "kkkkkkkkkkkkkkkkkkkk",
     "image":"https://static.8cache.com/cover/o/eJzLyTDW17UMjfJ08Q_2cClL1w9L8chLySzwM7Xw1HeEggI_T33dotAsxySz8iCLSP1yI0NT3QxjIyNdz2QTIwCrIRNr/lam-yeu-nu-gap-phai-dai-than.jpg",
     "name": "Làm Yêu Nữ Gặp Phải Đại Thần",
+    "theloai": "female",
     "url": "lam-yeu-nu-gap-phai-dai-than",
     "author": " Thanhtu"
   }

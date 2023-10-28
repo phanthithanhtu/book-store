@@ -24,14 +24,6 @@ export default function Header() {
             </Button>
           </Link>
         </Stack>
-        <div className="right-section ml-auto">
-          {' '}
-          <Link to="/dangnhap">
-            <Button variant="contained" className="bg-black text-white">
-              Đăng Nhập
-            </Button>
-          </Link>
-        </div>
       </div>
     </nav>
   );
