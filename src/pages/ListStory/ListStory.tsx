@@ -4,7 +4,6 @@ import StoryItem from '../../components/StoryItem/StoryItem';
 import { Grid, Stack } from '@mui/material';
 import { styled } from '@mui/system';
 
-// Style the Grid component to match the desired list style
 const ListStoryContainer = styled(Grid)({
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
@@ -14,13 +13,13 @@ const ListStoryContainer = styled(Grid)({
 });
 
 function ListStory() {
-  const datas = data; // Assuming data is imported correctly
+  const datas = data;
 
   return (
     <ListStoryContainer>
       {datas.map((data, index) => (
-        <Grid item key={index}>
-          <Stack>
+        <Grid item key={index} sx={{ height: '100%' }}>
+          <Stack sx={{ height: '100%' }}>
             <StoryItem data={data} />
           </Stack>
         </Grid>
