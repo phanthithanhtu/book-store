@@ -1,17 +1,25 @@
+import React from 'react';
 import Layout from '../../components/Layout/Layout';
 import ListStory from '../ListStory/ListStory';
-import './Home.scss';
+import { styled } from '@mui/system';
+import { Container } from '@mui/material';
 
-function Home() {
+const MainContent = styled('div')({
+  padding: '20px',
+  backgroundColor: '#f0f0f0',
+  minHeight: '100vh',
+});
+
+const Home = () => {
   return (
-    <>
-      <Layout>
-        <div className="main-content">
+    <Layout>
+      <Container>
+        <MainContent>
           <ListStory key={'list'} />
-        </div>
-      </Layout>
-    </>
+        </MainContent>
+      </Container>
+    </Layout>
   );
-}
+};
 
 export default Home;

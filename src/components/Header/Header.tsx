@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+
+const CustomButton = styled(Button)({
+  backgroundColor: 'black',
+  color: 'white',
+  // Add more CSS properties here for the button styling
+});
 
 export default function Header() {
   return (
@@ -14,14 +21,10 @@ export default function Header() {
         </div>
         <Stack spacing={2} direction="row">
           <Link to="/home">
-            <Button variant="contained" style={{ backgroundColor: 'black', color: 'white' }}>
-              Trang chủ
-            </Button>
+            <CustomButton variant="contained">Trang chủ</CustomButton>
           </Link>
           <Link to="/theloai">
-            <Button variant="contained" style={{ backgroundColor: 'black', color: 'white' }}>
-              Thể Loại
-            </Button>
+            <CustomButton variant="contained">Thể Loại</CustomButton>
           </Link>
         </Stack>
       </div>
