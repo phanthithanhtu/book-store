@@ -5,7 +5,7 @@ import { ValidationError } from './ValidationError';
 import { login } from '../../action/Account/AuthService';
 import { Container, Typography, Button, TextField } from '@mui/material';
 import { styled } from '@mui/system';
-
+import { useUser } from './UserContext';
 type LoginData = {
   username: string;
   password: string;
@@ -41,7 +41,7 @@ const TitleStyle = styled(Typography)({
 export function LoginPage() {
   const [loginError, setLoginError] = useState<string | null>(null);
   const navigate = useNavigate();
-
+  const { setUser } = useUser();
   const {
     register,
     handleSubmit,
@@ -55,6 +55,7 @@ export function LoginPage() {
     try {
       const success = await login(data.username, data.password);
       if (success) {
+        setUser(data.username);
         navigate('/home');
       } else {
         setLoginError('Incorrect username or password');
