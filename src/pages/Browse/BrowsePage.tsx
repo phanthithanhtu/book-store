@@ -3,6 +3,7 @@ import { Grid, Button } from '@mui/material';
 import { styled } from '@mui/system';
 import data from '../../data/items.json';
 import Browse from '../../components/Browses/Browse';
+// import { ItemType } from '../../components/Browses/Browse';
 
 const BrowsePage = () => {
   const [items, setItems] = useState(data);
@@ -35,7 +36,7 @@ const BrowsePage = () => {
     setSelectedCategory(category);
   };
 
-  const filteredItems = items.filter((item) => item.theloai === selectedCategory);
+  setItems(items.filter((item) => item.theloai === selectedCategory));
 
   return (
     <StyledContainer>
@@ -55,7 +56,7 @@ const BrowsePage = () => {
       </StyledButtonsWrapper>
 
       <Grid container spacing={4}>
-        {filteredItems.map((item) => (
+        {items.map((item) => (
           <Grid item key={item.id} xs={6} sm={4} md={3} lg={3}>
             <Browse item={item} />
           </Grid>

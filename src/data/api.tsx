@@ -1,5 +1,19 @@
+import axios from 'axios';
+
 export async function getItems() {
-  const response = await fetch('https://www.abibliadigital.com.br/api/books');
-  const data = (await response.json()) as unknown;
-  return data;
+  try {
+    const response = await axios.get('https://becnpmm.vercel.app/api/novels');
+    return response.data;
+  } catch (error) {
+    throw new Error('Error fetching items');
+  }
+}
+
+export async function getuser() {
+  try {
+    const response = await axios.get('https://webnovelapi.azurewebsites.net/api/accounts');
+    return response.data;
+  } catch (error) {
+    throw new Error('Error fetching user data');
+  }
 }

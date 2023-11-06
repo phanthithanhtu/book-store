@@ -1,9 +1,15 @@
 export interface Story {
   id: number;
-  description: string;
-  image: string;
-  url: string;
   name: string;
+  title: string;
   author: string;
-  [x: string]: any;
+  year: number;
+  views: number;
+  rating: number;
+  image: string;
+  genreName: string[];
+  description: string;
+  status: boolean;
+  approvalStatus: boolean;
+  genreIds: any[] | null;
 }

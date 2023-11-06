@@ -1,8 +1,9 @@
 import data from '../../data/items.json';
 import React from 'react';
 import StoryItem from '../../components/StoryItem/StoryItem';
-import { Grid, Stack } from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/system';
+import './index.scss';
 
 const ListStoryContainer = styled(Grid)({
   display: 'grid',
@@ -16,15 +17,20 @@ function ListStory() {
   const datas = data;
 
   return (
-    <ListStoryContainer>
-      {datas.map((data, index) => (
-        <Grid item key={index} sx={{ height: '100%' }}>
-          <Stack sx={{ height: '100%' }}>
-            <StoryItem data={data} />
-          </Stack>
-        </Grid>
-      ))}
-    </ListStoryContainer>
+    <div>
+      <Typography variant="h4" gutterBottom>
+        List of Stories
+      </Typography>
+      <ListStoryContainer>
+        {datas.map((data, index) => (
+          <Grid item key={index} sx={{ height: '100%' }}>
+            <Stack sx={{ height: '100%' }}>
+              <StoryItem data={data} />
+            </Stack>
+          </Grid>
+        ))}
+      </ListStoryContainer>
+    </div>
   );
 }
 

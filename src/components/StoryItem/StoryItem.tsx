@@ -16,6 +16,7 @@ const StyledStoryCard = styled('div')({
   border: '1px solid #ddd',
   backgroundColor: '#fff',
   boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+  height: '100%',
 });
 
 const StyledImgWrap = styled('div')({
@@ -33,18 +34,27 @@ const StyledContent = styled('div')({
 });
 
 const StyledTitle = styled('h2')({
+  display: '-webkit-box',
+  WebkitLineClamp: 1,
+  WebkitBoxOrient: 'vertical',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
   fontSize: '1.25rem',
   margin: 0,
+  maxHeight: '30px',
 });
 
 const StyledTitleLink = styled(Link)({
   textDecoration: 'none',
   color: '#000',
+  fontSize: '17px',
 });
 
 const StyledDescription = styled('div')({
   fontSize: '1rem',
   color: '#777',
+  maxHeight: '20px',
+  overflow: 'hidden',
 });
 
 const StyledInfo = styled('div')({
@@ -76,7 +86,7 @@ const StoryItem: React.FC<{ data: Partial<Story> }> = ({ data }) => {
       <StyledImgWrap>{data?.image && <StyledImage src={data.image} alt="" />}</StyledImgWrap>
       <StyledContent>
         <StyledTitle>
-          <StyledTitleLink to={`/novel/${data?.url}`}>{data?.name}</StyledTitleLink>
+          <StyledTitleLink to={`/novel/${data?.name}`}>{data?.name}</StyledTitleLink>
         </StyledTitle>
         <StyledDescription>{data?.description}</StyledDescription>
         {data?.author && (
@@ -85,7 +95,6 @@ const StoryItem: React.FC<{ data: Partial<Story> }> = ({ data }) => {
               <StyledAuthorIcon className="bx bx-edit-alt" />
               {data?.author}
             </StyledAuthor>
-            <StyledType>Type</StyledType>
           </StyledInfo>
         )}
         <Checkbox {...label} icon={<FavoriteBorderIcon />} checkedIcon={<FavoriteIcon />} />

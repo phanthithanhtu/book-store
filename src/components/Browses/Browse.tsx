@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Item {
+export interface ItemType {
   id: number;
   description: string;
   image: string;
@@ -11,7 +11,7 @@ interface Item {
 }
 
 interface CardProps {
-  item: Item;
+  item: ItemType;
 }
 
 const Browse: React.FC<CardProps> = ({ item }) => {
