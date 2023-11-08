@@ -1,4 +1,4 @@
-import data from '../../data/items.json';
+import data from '../../data/fakebooks.json';
 import React from 'react';
 import StoryItem from '../../components/StoryItem/StoryItem';
 import { Grid, Stack, Typography } from '@mui/material';

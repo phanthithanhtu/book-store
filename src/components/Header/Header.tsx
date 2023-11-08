@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Stack from '@mui/material/Stack';
 import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
@@ -7,7 +7,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import { useUser } from '../../pages/Login/UserContext';
-
+import { queryStore } from '../../store/queryStore';
 interface MenuItem {
   path: string;
   display: string;
@@ -120,16 +120,24 @@ export default function Header() {
   const { user } = useUser();
   const [showSettings, setShowSettings] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-
+  const setQuery = queryStore((state) => state.setQuery);
+  const [search, setSearch] = useState<string>('');
+  const navigate = useNavigate(); // Đảm bảo bạn import useNavigate từ 'react-router-dom'
+  // const handleSearchChange = (event) => {
+  //   setSearchQuery(event.target.value);
+  //   // Cập nhật giá trị `search`
+  //   setSearch(event.target.value);
+  // };
   const toggleSettings = () => {
     setShowSettings(!showSettings);
   };
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
-    // Implement search operations here if needed
+  const onClickSearch = () => {
+    setQuery(search);
+    if (navigate.name !== '/timkiem') {
+      navigate('/timkiem');
+    }
   };
-
   return (
     <StyledHeader>
       <StyledNavWrap>
@@ -144,9 +152,9 @@ export default function Header() {
             <SearchInput
               placeholder="Search..."
               value={searchQuery}
-              onChange={handleSearchChange}
+              // onChange={handleSearchChange}
             />
-            <SearchIcon />
+            <SearchIcon onClick={onClickSearch} />
           </SearchBar>
         </Stack>
         <RightSection>

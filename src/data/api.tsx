@@ -3,17 +3,17 @@ import axios from 'axios';
 export async function getItems() {
   try {
     const response = await axios.get('https://becnpmm.vercel.app/api/novels');
-    return response.data;
+    return response.data.data;
   } catch (error) {
     throw new Error('Error fetching items');
   }
 }
 
-export async function getuser() {
+export async function getStory(url: string) {
   try {
-    const response = await axios.get('https://webnovelapi.azurewebsites.net/api/accounts');
-    return response.data;
+    const response = await axios.get(`https://becnpmm.vercel.app/api/novels/novel/${url}`);
+    return response.data.data;
   } catch (error) {
-    throw new Error('Error fetching user data');
+    throw new Error('Error fetching story');
   }
 }

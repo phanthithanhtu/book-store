@@ -17,6 +17,14 @@ const StyledStoryCard = styled('div')({
   backgroundColor: '#fff',
   boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
   height: '100%',
+  transition: 'transform 0.3s, box-shadow 0.3s',
+  '&:hover': {
+    transform: 'scale(1.05)', // Increase size when hovered
+    boxShadow: '0px 0px 10px 5px rgba(0, 0, 0, 0.1)', // Add box shadow
+  },
+  '&:hover $Checkbox': {
+    opacity: 1, // Show checkbox on hover
+  },
 });
 
 const StyledImgWrap = styled('div')({
@@ -86,7 +94,7 @@ const StoryItem: React.FC<{ data: Partial<Story> }> = ({ data }) => {
       <StyledImgWrap>{data?.image && <StyledImage src={data.image} alt="" />}</StyledImgWrap>
       <StyledContent>
         <StyledTitle>
-          <StyledTitleLink to={`/novel/${data?.name}`}>{data?.name}</StyledTitleLink>
+          <StyledTitleLink to={`/novel/${data?.url}`}>{data?.name}</StyledTitleLink>
         </StyledTitle>
         <StyledDescription>{data?.description}</StyledDescription>
         {data?.author && (

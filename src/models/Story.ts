@@ -1,15 +1,16 @@
 export interface Story {
-  id: number;
-  name: string;
-  title: string;
+  id: string;
   author: string;
-  year: number;
-  views: number;
-  rating: number;
-  image: string;
-  genreName: string[];
   description: string;
-  status: boolean;
-  approvalStatus: boolean;
-  genreIds: any[] | null;
+  image: string;
+  name: string;
+  numberofrating: string;
+  rating: string;
+  reads: string;
+  state: string;
+  status: string;
+  type: string;
+  uploader: string;
+  url: string;
+  numberofchapter: number;
 }

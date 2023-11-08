@@ -29,7 +29,7 @@ const ListStoryContainer = styled(Grid)({
   backgroundColor: '#f0f0f0',
 });
 
-function ListStory() {
+function Listtop() {
   const [datas, setDatas] = useState<ItemType[]>([]);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ function ListStory() {
   return (
     <div>
       <Typography variant="h4" gutterBottom>
-        List of Stories
+        List ListToptrending
       </Typography>
       <ListStoryContainer>
         {datas.map((data, index) => (
@@ -67,4 +67,4 @@ function ListStory() {
   );
 }
 
-export default ListStory;
+export default Listtop;
