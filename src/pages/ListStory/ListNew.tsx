@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getTops } from '../../data/api';
-import StoryTop from '../../components/StoryItem/Storytop';
+import { getNewlist } from '../../data/api';
+import StoryNew from '../../components/StoryItem/Storytop';
 import { styled } from '@mui/system';
 import { Grid, Stack, Typography } from '@mui/material';
 
@@ -29,13 +29,13 @@ const ListStoryContainer = styled(Grid)({
   backgroundColor: '#f0f0f0',
 });
 
-function Listtop() {
+function ListNew() {
   const [datas, setDatas] = useState<ItemType[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getTops();
+        const data = await getNewlist();
         if (Array.isArray(data)) {
           setDatas(data as ItemType[]); // Type assertion to ItemType[]
         } else {
@@ -50,15 +50,15 @@ function Listtop() {
   }, []);
 
   return (
-    <div id="2">
+    <div id="1">
       <Typography variant="h4" gutterBottom>
-        Toptrending
+        NovelNew
       </Typography>
       <ListStoryContainer>
         {datas.map((data, index) => (
           <Grid item key={index} sx={{ height: '100%' }}>
             <Stack sx={{ height: '100%' }}>
-              <StoryTop data={data} />
+              <StoryNew data={data} />
             </Stack>
           </Grid>
         ))}
@@ -67,4 +67,4 @@ function Listtop() {
   );
 }
 
-export default Listtop;
+export default ListNew;

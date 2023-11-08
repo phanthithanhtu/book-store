@@ -17,7 +17,7 @@ function ListStory() {
   const datas = data;
 
   return (
-    <div>
+    <div id="1">
       <Typography variant="h4" gutterBottom>
         List of Stories
       </Typography>

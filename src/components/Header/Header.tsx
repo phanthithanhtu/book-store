@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import { useUser } from '../../pages/Login/UserContext';
 import { queryStore } from '../../store/queryStore';
+import { autoPlay } from 'react-swipeable-views-utils';
 interface MenuItem {
   path: string;
   display: string;
@@ -74,7 +75,9 @@ const CustomButton = styled(Button)(({ theme }) => ({
 const StyledHeader = styled('nav')(({ theme }) => ({
   backgroundColor: 'transparent',
   padding: theme.spacing(1),
-  position: 'relative',
+  position: 'fixed', // Set the header position to fixed
+  top: 0, // Position the header at the top of the viewport
+  width: '100%', // Make the header span the entire width of the viewport
   zIndex: '999',
 }));
 
@@ -122,7 +125,7 @@ export default function Header() {
   const [searchQuery, setSearchQuery] = useState('');
   const setQuery = queryStore((state) => state.setQuery);
   const [search, setSearch] = useState<string>('');
-  const navigate = useNavigate(); // Đảm bảo bạn import useNavigate từ 'react-router-dom'
+  const navigate = useNavigate();
   // const handleSearchChange = (event) => {
   //   setSearchQuery(event.target.value);
   //   // Cập nhật giá trị `search`
@@ -148,6 +151,9 @@ export default function Header() {
           <Link to="/theloai" style={{ textDecoration: 'none' }}>
             <CustomButton variant="contained">Browse</CustomButton>
           </Link>
+          <Link to="/theloai" style={{ textDecoration: 'none' }}>
+            <CustomButton variant="contained">Reading</CustomButton>
+          </Link>
           <SearchBar>
             <SearchInput
               placeholder="Search..."
@@ -158,26 +164,14 @@ export default function Header() {
           </SearchBar>
         </Stack>
         <RightSection>
-          {user && (
-            <>
-              <span>Welcome, {user}!</span>
-              <SettingsIconStyled onClick={toggleSettings} />
-              {showSettings && (
-                <VerticalMenu>
-                  {menu.USER.map((item, index) => (
-                    <Link key={index} to={item.path} style={{ textDecoration: 'none' }}>
-                      <MenuItemStyled
-                        startIcon={<span className={item.icon} />}
-                        variant="contained"
-                      >
-                        {item.display}
-                      </MenuItemStyled>
-                    </Link>
-                  ))}
-                </VerticalMenu>
-              )}
-            </>
-          )}
+          {/* ... (previous code remains unchanged) */}
+          <a href="#1" style={{ textDecoration: 'none' }}>
+            <CustomButton variant="contained">NewList</CustomButton>
+          </a>
+          <a href="#2" style={{ textDecoration: 'none' }}>
+            <CustomButton variant="contained">TopTrending</CustomButton>
+          </a>
+          {/* ... (previous code remains unchanged) */}
         </RightSection>
       </StyledNavWrap>
     </StyledHeader>

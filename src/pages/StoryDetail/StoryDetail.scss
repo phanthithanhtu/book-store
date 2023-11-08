@@ -1,9 +1,75 @@
 
 .main-content{
-    height: 700px;
+    height: 900px;
     border-radius: 10px;
     background-color: rgb(241, 239, 239);
     padding: 15px;
     margin: 20px;
-    width: 100%;
+    
+}
+.row {
+    display: flex;
+    padding: 20px;
+   /* Cách thức căn chỉnh: có thể là space-between hoặc các cách thức khác tùy thuộc vào thiết kế */
+  }
+  /* StoryDetail.css */
+.heroSide {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+.img{
+    width: 310px;
+    height: 480px;
+    margin-top: 20px; 
+}
+.heroSide__main{
+    margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+}  
+ .heroSide__main__info  {
+  display: flex;
+ }
+ .box {
+    margin-right: 10px; /* Thêm margin phải */
+}
+.box:last-child {
+    margin-right: 0; /* Loại bỏ margin của phần tử cuối cùng */
+}
+.heroSide__main__description{
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+.heroSide__main__info li {
+   
+    font-weight: bold;
+    background-color: gray;
+    border-radius: 5px; 
+    padding: 5px;/* Loại bỏ kí hiệu của list */
+  }
+  li{
+    list-style: none;
+
+  }
+  .heroSide__main__statistic li{
+    padding-right: 20px;
+  }
+ 
+  .heroSide__main__rate-wrap  {
+    padding: 40px;
+
+  }
+  .title button{
+    margin: 10px;
+    position:absolute;
+    background-color: gray;
+    right: 100px;
+  }
+  button:hover{
+    color:rgb(247, 244, 244);
+    background-color:rgb(28, 28, 25);
 }
