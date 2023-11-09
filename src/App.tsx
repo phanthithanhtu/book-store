@@ -9,6 +9,7 @@ import { UserProvider } from './pages/Login/UserContext';
 import Search from './pages/Search/Search';
 import StoryDetail from './pages/StoryDetail/StoryDetail';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import ChapterView from './pages/ChapterView/ChapterView';
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/theloai" element={<BrowsePage />} />
             <Route path="timkiem" element={<Search />} />
             <Route path="/novel/:url" element={<StoryDetail />} />
+            <Route path="truyen/:url/:chapnum" element={<ChapterView />} />
           </Routes>
           <Footer />
         </UserProvider>

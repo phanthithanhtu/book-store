@@ -17,6 +17,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    background-color: rgb(179, 177, 175);
+    border: 2px;
+    border-radius: 10px;
   }
 
 .img{
@@ -29,12 +32,18 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        text-align: center;
 }  
  .heroSide__main__info  {
   display: flex;
  }
  .box {
-    margin-right: 10px; /* Thêm margin phải */
+    margin-right: 10px;
+    width: 100px; 
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+   ;/* Thêm margin phải */
 }
 .box:last-child {
     margin-right: 0; /* Loại bỏ margin của phần tử cuối cùng */
@@ -47,12 +56,13 @@
 .heroSide__main__info li {
    
     font-weight: bold;
-    background-color: gray;
+    background-color: rgb(224, 213, 213);
     border-radius: 5px; 
     padding: 5px;/* Loại bỏ kí hiệu của list */
   }
   li{
     list-style: none;
+    font-size: 20px;
 
   }
   .heroSide__main__statistic li{
@@ -64,7 +74,7 @@
 
   }
   .title button{
-    margin: 10px;
+    margin: 30px;
     position:absolute;
     background-color: gray;
     right: 100px;
@@ -72,4 +82,7 @@
   button:hover{
     color:rgb(247, 244, 244);
     background-color:rgb(28, 28, 25);
+}
+h2 {
+  margin-left: 60px;
 }

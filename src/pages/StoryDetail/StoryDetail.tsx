@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../../components/Layout/Layout';
 import './StoryDetail.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { getStory } from '../../data/api'; // Đảm bảo đường dẫn và tên file API đúng
 import { Story } from '../../models/Story';
@@ -26,7 +26,6 @@ function StoryDetail() {
       refetch(); // Kích hoạt 'refetch' nếu 'refetch' tồn tại và là một hàm
     }
   }, [url, refetch]); // Bao gồm 'refetch' như một phụ thuộc
-
   return (
     <Layout>
       <Slide />
@@ -76,7 +75,11 @@ function StoryDetail() {
               </div>
             </div>
             <div className="title">
-              <button> ĐỌC TRUYỆN </button>
+              <Link to={`/truyen/${url}/${1}`}>
+                <button className="btn-primary">
+                  <i className="bx bx-glasses"></i>Đọc truyện
+                </button>
+              </Link>
             </div>
           </div>
         )}

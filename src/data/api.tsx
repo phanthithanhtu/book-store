@@ -32,9 +32,11 @@ export async function getStory(url: string) {
     throw new Error('Error fetching story');
   }
 }
-export async function getChapters(url: string) {
+export async function getChapterByNumber(tentruyen: string | undefined, chapnum: string | number) {
   try {
-    const response = await axios.get(`https://becnpmm.vercel.app/api/novels/novel/${url}/chuong`);
+    const response = await axios.get(
+      `https://becnpmm.vercel.app/api/novels/novel/${tentruyen}/chuong/${chapnum}`,
+    );
     return response.data.data;
   } catch (error) {
     throw new Error('Error fetching story');

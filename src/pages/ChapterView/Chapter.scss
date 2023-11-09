@@ -1,0 +1,47 @@
+/* ChapterView component styles */
+
+.main {
+    background-color: #ced9d9;
+    padding-top: 30px;
+  }
+  
+  .container {
+    padding-bottom: 3rem;
+  }
+  
+  #chapter__content {
+    /* Styles for the chapter content */
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 40px;
+  }
+  
+  .chapter__navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .chapter__navigation button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #2e86de;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .chapter__navigation button:hover {
+    background-color: #1e56bc;
+  }
+  .onClick{
+    text-align: center;
+ 
+    
+  }
+  .onClick button{
+    background-color: rgb(150, 150, 148);
+    height: 20px;
+    width: 70px;
+  }
