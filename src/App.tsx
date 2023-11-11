@@ -6,10 +6,10 @@ import Footer from './components/Footer/Footer';
 import BrowsePage from './pages/Browse/BrowsePage';
 import { LoginPage } from './pages/Login/LoginPage';
 import { UserProvider } from './pages/Login/UserContext';
-import Search from './pages/Search/Search';
 import StoryDetail from './pages/StoryDetail/StoryDetail';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import ChapterView from './pages/ChapterView/ChapterView';
+import ChapPage from './pages/ChapterView/ChapPage';
 
 const queryClient = new QueryClient();
 
@@ -24,9 +24,8 @@ function App() {
             <Route path="/dangnhap" element={<LoginPage />} />
             <Route path="/home" element={<Home />} />
             <Route path="/theloai" element={<BrowsePage />} />
-            <Route path="timkiem" element={<Search />} />
             <Route path="/novel/:url" element={<StoryDetail />} />
-            <Route path="truyen/:url/:chapnum" element={<ChapterView />} />
+            <Route path="truyen/:url/:chapnum" element={<ChapPage />} />
           </Routes>
           <Footer />
         </UserProvider>

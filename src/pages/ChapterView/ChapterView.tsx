@@ -34,6 +34,7 @@ function ChapterView() {
         contentRef.current.innerHTML = chapter.content || '';
       }
     }
+    window.scrollTo(0, 0);
   }, [chapter]);
 
   const goToPreviousChapter = () => {
@@ -51,7 +52,7 @@ function ChapterView() {
   return (
     <div className="main" style={{ backgroundColor: '#ced9d9', paddingTop: '30px' }}>
       <div className="container" style={{ paddingBottom: '3rem' }}>
-        <h1>{chapter?.tenchap}</h1>
+        <h1>{chapter?.id}</h1>
         <div ref={contentRef} id="chapter__content">
           {chapter?.content ? chapter.content : <Skeleton count={20} />}
         </div>

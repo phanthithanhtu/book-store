@@ -42,3 +42,13 @@ export async function getChapterByNumber(tentruyen: string | undefined, chapnum:
     throw new Error('Error fetching story');
   }
 }
+export async function getNameChapters(url: string) {
+  try {
+    const response = await axios.get(
+      `https://becnpmm.vercel.app/api/novels/novel//novels/novel/${url}/mucluc`,
+    );
+    return response.data.data;
+  } catch (error) {
+    throw new Error('Error fetching story');
+  }
+}

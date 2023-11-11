@@ -7,7 +7,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled } from '@mui/material/styles';
 import { useUser } from '../../pages/Login/UserContext';
-import { queryStore } from '../../store/queryStore';
 import { autoPlay } from 'react-swipeable-views-utils';
 interface MenuItem {
   path: string;
@@ -73,7 +72,8 @@ const CustomButton = styled(Button)(({ theme }) => ({
 }));
 
 const StyledHeader = styled('nav')(({ theme }) => ({
-  backgroundColor: 'transparent',
+  //backgroundColor: 'transparent',
+  backgroundColor: 'gray',
   padding: theme.spacing(1),
   position: 'fixed', // Set the header position to fixed
   top: 0, // Position the header at the top of the viewport
@@ -94,53 +94,9 @@ const RightSection = styled('div')({
   alignItems: 'center',
 });
 
-const SettingsIconStyled = styled(SettingsIcon)({
-  fontSize: '1.5rem',
-  marginLeft: '8px',
-});
-
-const VerticalMenu = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  backgroundColor: 'black',
-  padding: '10px',
-  position: 'absolute',
-  top: '100%',
-  right: '0',
-  zIndex: '1',
-});
-
-const MenuItemStyled = styled(Button)({
-  textTransform: 'none',
-  margin: '5px 0',
-  '&:hover': {
-    backgroundColor: 'darkgray',
-  },
-  backgroundColor: 'black',
-});
-
 export default function Header() {
-  const { user } = useUser();
-  const [showSettings, setShowSettings] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const setQuery = queryStore((state) => state.setQuery);
-  const [search, setSearch] = useState<string>('');
   const navigate = useNavigate();
-  // const handleSearchChange = (event) => {
-  //   setSearchQuery(event.target.value);
-  //   // Cập nhật giá trị `search`
-  //   setSearch(event.target.value);
-  // };
-  const toggleSettings = () => {
-    setShowSettings(!showSettings);
-  };
 
-  const onClickSearch = () => {
-    setQuery(search);
-    if (navigate.name !== '/timkiem') {
-      navigate('/timkiem');
-    }
-  };
   return (
     <StyledHeader>
       <StyledNavWrap>
@@ -155,12 +111,7 @@ export default function Header() {
             <CustomButton variant="contained">Reading</CustomButton>
           </Link>
           <SearchBar>
-            <SearchInput
-              placeholder="Search..."
-              value={searchQuery}
-              // onChange={handleSearchChange}
-            />
-            <SearchIcon onClick={onClickSearch} />
+            <SearchIcon />
           </SearchBar>
         </Stack>
         <RightSection>
